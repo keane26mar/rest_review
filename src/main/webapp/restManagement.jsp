@@ -15,6 +15,12 @@
 <hr>
 <div class="container text-left">
 <!-- Add new user button redirects to the register.jsp page -->
+
+<a href="<%=request.getContextPath()%>/rest.jsp" class="btn btn-success">Add New Restaurant</a>
+</div>
+<br>
+
+
 </div>
 <br>
 
@@ -53,6 +59,7 @@ li a:hover {
     </ul>
 
 
+
 <div class="row">
 <c:forEach var="rest" items="${listRests}">
   <div class="col-sm-4 pb-3">
@@ -60,8 +67,15 @@ li a:hover {
       <div class="card-body">
       <img class="card-img-top" src= "<c:out value="${rest.image}" />" alt="Card image cap">
         <h5 class="card-title"><c:out value="${rest.title}" /></h5>
+
+        <p class="card-text"><c:out value="${rest.description}" /></p>
+<a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a> &nbsp;&nbsp;&nbsp;&nbsp;      
+
+<a href="<%=request.getContextPath()%>/ReviewServlet?restId=<c:out value='${rest.restId}' />">Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;     
+
         <p class="card-text"><c:out value="${rest.description}" /></p> 
         <a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a>     
+
         
       </div>
     </div>

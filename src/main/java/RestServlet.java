@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 
+
 import restaurant_project.Rest;
+
 
 /**
  * Servlet implementation class RestServlet
@@ -30,10 +32,9 @@ public class RestServlet extends HttpServlet {
 	
 	private static final String SELECT_ALL_RESTS = "select * from rest_details ";
 	private static final String SELECT_REST_BY_ID = "select image, description, address, contact, website, title from rest_details where restId = ?";
-      
+
 	
-	
-	protected Connection getConnection() {
+    protected Connection getConnection() {
 		Connection connection = null;
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -45,6 +46,13 @@ public class RestServlet extends HttpServlet {
 		}
 		return connection;
 	}
+	
+	
+	
+
+
+
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -57,14 +65,17 @@ public class RestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		// TODO Auto-generated method stub
 		
+
 		String action = request.getServletPath();
 		try {
 		switch (action) {
 		case "/RestServlet/getById":
 			getRestById(request,response);
 			break;
+		case "/RestServlet/dashboard":
 		case "/RestServlet":
 			listRests(request,response);
 			break;
@@ -75,6 +86,7 @@ public class RestServlet extends HttpServlet {
 		} catch (SQLException ex) {
 		throw new ServletException(ex);
 		} 
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -85,7 +97,7 @@ public class RestServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	
+
 	private void listRests(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
@@ -121,8 +133,9 @@ public class RestServlet extends HttpServlet {
 		int restId = Integer.parseInt(request.getParameter("restId"));
 		
 		int phone = Integer.parseInt(request.getParameter("contact"));
-//		Rest existingRest = new Rest();	
+
 		Rest existingRest = new Rest(restId, "image", "description", "address", phone, "website", "title");
+
 		
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
