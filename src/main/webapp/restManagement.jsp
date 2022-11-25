@@ -15,9 +15,49 @@
 <hr>
 <div class="container text-left">
 <!-- Add new user button redirects to the register.jsp page -->
+
 <a href="<%=request.getContextPath()%>/rest.jsp" class="btn btn-success">Add New Restaurant</a>
 </div>
 <br>
+
+
+</div>
+<br>
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+<body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="Login.jsp">Login</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+
+    </ul>
+
 
 
 <div class="row">
@@ -27,10 +67,15 @@
       <div class="card-body">
       <img class="card-img-top" src= "<c:out value="${rest.image}" />" alt="Card image cap">
         <h5 class="card-title"><c:out value="${rest.title}" /></h5>
+
         <p class="card-text"><c:out value="${rest.description}" /></p>
 <a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a> &nbsp;&nbsp;&nbsp;&nbsp;      
 
 <a href="<%=request.getContextPath()%>/ReviewServlet?restId=<c:out value='${rest.restId}' />">Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;     
+
+        <p class="card-text"><c:out value="${rest.description}" /></p> 
+        <a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a>     
+
         
       </div>
     </div>

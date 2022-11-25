@@ -1,5 +1,6 @@
 
 
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
+
+
+import restaurant_project.Rest;
+
+
 /**
  * Servlet implementation class RestServlet
  */
@@ -26,12 +32,9 @@ public class RestServlet extends HttpServlet {
 	
 	private static final String SELECT_ALL_RESTS = "select * from rest_details ";
 	private static final String SELECT_REST_BY_ID = "select image, description, address, contact, website, title from rest_details where restId = ?";
-	private static final String INSERT_RESTS_SQL = "INSERT INTO rest_details" + " (restId, image, description, address, contact, website, title) VALUES " +
-	" (?, ?, ?, ?, ?, ?, ?);";
-	private static final String DELETE_RESTS_SQL = "delete from rest_details where restId = ?;";
-	private static final String UPDATE_RESTS_SQL = "update rest_details set restId = ?, image = ?, description = ?, address = ?, contact = ?, website = ?, title = ? where restId = ?;";
+
 	
-	protected Connection getConnection() {
+    protected Connection getConnection() {
 		Connection connection = null;
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -42,10 +45,11 @@ public class RestServlet extends HttpServlet {
 		e.printStackTrace();
 		}
 		return connection;
-		}
+	}
 	
 	
 	
+
 
 
 
@@ -61,6 +65,10 @@ public class RestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		// TODO Auto-generated method stub
+		
+
 		String action = request.getServletPath();
 		try {
 		switch (action) {
@@ -68,6 +76,7 @@ public class RestServlet extends HttpServlet {
 			getRestById(request,response);
 			break;
 		case "/RestServlet/dashboard":
+		case "/RestServlet":
 			listRests(request,response);
 			break;
 		default:
@@ -77,7 +86,7 @@ public class RestServlet extends HttpServlet {
 		} catch (SQLException ex) {
 		throw new ServletException(ex);
 		} 
-		
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -88,6 +97,7 @@ public class RestServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
 	private void listRests(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
@@ -121,7 +131,11 @@ public class RestServlet extends HttpServlet {
 			throws SQLException, IOException, ServletException
 			{
 		int restId = Integer.parseInt(request.getParameter("restId"));
-		Rest existingRest = null;
+		
+		int phone = Integer.parseInt(request.getParameter("contact"));
+
+		Rest existingRest = new Rest(restId, "image", "description", "address", phone, "website", "title");
+
 		
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
