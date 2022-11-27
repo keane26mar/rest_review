@@ -11,16 +11,9 @@
 <body>
 <div class="row">
 <div class="container">
-<h3 class="text-center">List of Restaurants</h3>
-<hr>
+
 <div class="container text-left">
 <!-- Add new user button redirects to the register.jsp page -->
-
-<a href="<%=request.getContextPath()%>/rest.jsp" class="btn btn-success">Add New Restaurant</a>
-</div>
-<br>
-
-
 </div>
 <br>
 
@@ -32,11 +25,9 @@ ul {
     overflow: hidden;
     background-color: #333;
 }
-
 li {
     float: left;
 }
-
 li a {
     display: block;
     color: white;
@@ -44,7 +35,6 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
 li a:hover {
     background-color: #111;
 }
@@ -58,6 +48,7 @@ li a:hover {
 
     </ul>
 
+    <h3 class="text-center pt-3 pb-3">List of Restaurants</h3>
 
 
 <div class="row">
@@ -67,16 +58,12 @@ li a:hover {
       <div class="card-body">
       <img class="card-img-top" src= "<c:out value="${rest.image}" />" alt="Card image cap">
         <h5 class="card-title"><c:out value="${rest.title}" /></h5>
-
         <p class="card-text"><c:out value="${rest.description}" /></p>
-<a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a> &nbsp;&nbsp;&nbsp;&nbsp;      
 
-<a href="<%=request.getContextPath()%>/ReviewServlet?restId=<c:out value='${rest.restId}' />">Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;     
+        <a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a> &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <p class="card-text"><c:out value="${rest.description}" /></p> 
-        <a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a>     
+<a href="<%=request.getContextPath()%>/ReviewServlet?restId=<c:out value='${rest.restId}' />">Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;
 
-        
       </div>
     </div>
   </div>
