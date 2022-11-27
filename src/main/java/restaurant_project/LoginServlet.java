@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 		//database
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/userdetails", "root", "password");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/restinfo", "root", "password");
 			//get data from login table using query
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("select * from userdetails where username='"+username+"' and password='"+password+"' ");
