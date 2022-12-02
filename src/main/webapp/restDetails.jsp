@@ -37,10 +37,6 @@ Add New User
 <c:if test="${rest != null}">
 <input type="hidden" name="restId" value="<c:out value='${rest.restId}' />" /> 
 </c:if>
-
- 
-
- 
    <c:out value="${rest.title}" />
  
 

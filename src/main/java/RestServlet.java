@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
+import java.awt.event.ActionEvent;
 
 
 import restaurant_project.Rest;
@@ -32,7 +33,7 @@ public class RestServlet extends HttpServlet {
 	
 	private static final String SELECT_ALL_RESTS = "select * from rest_details ";
 	private static final String SELECT_REST_BY_ID = "select image, description, address, contact, website, title from rest_details where restId = ?";
-
+	private static final String SELECT_REST_TITLE = "select * from rest_details where title = ? ";
 	
     protected Connection getConnection() {
 		Connection connection = null;
@@ -48,11 +49,6 @@ public class RestServlet extends HttpServlet {
 	}
 	
 	
-	
-
-
-
-
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -68,7 +64,6 @@ public class RestServlet extends HttpServlet {
 
 		// TODO Auto-generated method stub
 		
-
 		String action = request.getServletPath();
 		try {
 		switch (action) {
@@ -162,5 +157,6 @@ public class RestServlet extends HttpServlet {
 			request.setAttribute("rest", existingRest);
 			request.getRequestDispatcher("/restDetails.jsp").forward(request, response);
 	}
+	
 
 }

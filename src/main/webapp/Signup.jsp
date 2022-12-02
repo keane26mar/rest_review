@@ -32,7 +32,7 @@
 						
 					  </div>
 
-					  <a href="index.html" style="float: right;">HOME</a>
+					  <a href="index.jsp" style="float: right;">HOME</a>
 					</form>
 				  </div>
 				</div>			  
