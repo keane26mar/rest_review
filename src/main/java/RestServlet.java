@@ -31,7 +31,7 @@ public class RestServlet extends HttpServlet {
 	private String jdbcPassword = "password";
 	
 	private static final String SELECT_ALL_RESTS = "select * from rest_details ";
-	private static final String SELECT_REST_BY_ID = "select image, description, address, contact, website, title from rest_details where restId = ?";
+	private static final String SELECT_REST_BY_ID = "select * from rest_details where restId = ?";
 
 	
     protected Connection getConnection() {
@@ -71,19 +71,13 @@ public class RestServlet extends HttpServlet {
 
 		String action = request.getServletPath();
 		try {
-		switch (action) {
-		case "/RestServlet/getById":
-			getRestById(request,response);
-			break;
-		case "/RestServlet/dashboard":
-		case "/RestServlet":
-			listRests(request,response);
-			break;
-		default:
-		listRests(request, response);
-		break;
-		}
-		} catch (SQLException ex) {
+			switch (action) {
+			case "/RestServlet/details":
+				getRestById(request,response);
+			case "/RestServlet/dashboard":
+				listRests(request,response);
+			
+			}} catch (SQLException ex) {
 		throw new ServletException(ex);
 		} 
 
@@ -127,7 +121,7 @@ public class RestServlet extends HttpServlet {
 			request.getRequestDispatcher("/restManagement.jsp").forward(request, response);
 	}
 
-	private void getRestById(HttpServletRequest request, HttpServletResponse response)
+	/*private void getRestById(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
 		int restId = Integer.parseInt(request.getParameter("restId"));
@@ -161,6 +155,39 @@ public class RestServlet extends HttpServlet {
 			}
 			request.setAttribute("rest", existingRest);
 			request.getRequestDispatcher("/restDetails.jsp").forward(request, response);
+	}
+*/
+	 private void getRestById(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		int restId = Integer.parseInt(request.getParameter("restId"));
+		Rest existingRest = new Rest(0, "", "", "", 0, "", "");
+		try (Connection connection = getConnection();
+				// Step 5.1: Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_REST_BY_ID);) {
+			preparedStatement.setInt(1, restId);
+			// Step 5.2: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			// Step 5.3: Process the ResultSet object.
+			while (rs.next()) {
+			restId = rs.getInt("restId");
+			String image = rs.getString("image");
+			String description = rs.getString("description");
+			String address = rs.getString("address");
+			int contact = rs.getInt("contact");
+			String website = rs.getString("website");
+			String title = rs.getString("title");
+			existingRest = new Rest(restId, image, description, address, contact, website, title);
+	
+
+
+				
+		
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		request.setAttribute("rest", existingRest);
+		request.getRequestDispatcher("/restDetails.jsp").forward(request, response);
 	}
 
 }

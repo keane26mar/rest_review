@@ -97,6 +97,7 @@ public class ReviewServlet extends HttpServlet {
 				String review = rs.getString("review");
 				int reviewId = rs.getInt("reviewId");
 				System.out.println(reviewId);
+				
 
 				
 				if (restaurantId == id) {

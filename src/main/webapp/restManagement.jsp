@@ -60,8 +60,7 @@ li a:hover {
         <h5 class="card-title"><c:out value="${rest.title}" /></h5>
         <p class="card-text"><c:out value="${rest.description}" /></p>
 
-        <a href="getById?restId=<c:out value='${rest.restId}' />">More Info</a> &nbsp;&nbsp;&nbsp;&nbsp;
-
+<a href="details?restId=<c:out value='${rest.restId}' />">More Info</a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="<%=request.getContextPath()%>/ReviewServlet?restId=<c:out value='${rest.restId}' />">Reviews</a> &nbsp;&nbsp;&nbsp;&nbsp;
 
       </div>
