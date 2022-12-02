@@ -5,6 +5,10 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,12 +16,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import restaurant_project.Rest;
+
 /**
  * Servlet implementation class ReviewAddServlet
  */
 @WebServlet("/ReviewAddServlet")
 public class ReviewAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String jdbcURL = "jdbc:mysql://localhost:3307/restinfo";
+	private String jdbcUsername = "root";
+	private String jdbcPassword = "password";
+	
+	private static final String INSERT_REVIEW_SQL = "INSERT INTO reviewdetails"
+			+ " (userId, restaurantId, rating, title, review, reviewId) VALUES " + " (?, ?, ?, ?, ?, ?);";
+	
+	protected Connection getConnection() {
+		Connection connection = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return connection;
+	}
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -46,21 +71,21 @@ public class ReviewAddServlet extends HttpServlet {
 		int e = Integer.parseInt(request.getParameter("rating"));
 		String c = request.getParameter("title");
 		String b = request.getParameter("review");
-		int a = Integer.parseInt(request.getParameter("reviewId"));
+		/* int a = Integer.parseInt(request.getParameter("reviewId")); */
 
 		//Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3307/restinfo", "root", "password");
 		//Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
-		PreparedStatement ps = con.prepareStatement("insert into reviewdetails values(?,?,?,?,?,?)");
+		PreparedStatement ps = con.prepareStatement("insert into reviewdetails(userId, restaurantId, rating, title, review) values(?,?,?,?,?)");
 		//Step 5: parse in the data retrieved from the web form request into the prepared statement accordingly
 		ps.setInt(1, n);
 		ps.setInt(2, p);
 		ps.setInt(3, e);
 		ps.setString(4, c);
 		ps.setString(5, b);
-		ps.setInt(6, a);
+		/* ps.setInt(6, a); */
 		
 		
 		
@@ -79,5 +104,6 @@ public class ReviewAddServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
 
 }
