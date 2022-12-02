@@ -18,5 +18,4 @@
 <url-pattern>/RestServlet/dashboard</url-pattern>
 <url-pattern>/RestServlet/details</url-pattern>
 
-</servlet-mapping>
 </web-app>
