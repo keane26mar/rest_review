@@ -9,11 +9,11 @@
 <body>
 <form action="ReviewAddServlet" method="post">
 User Id: <input type="text" name="userId">
-Restaurant Id: <input type="text" name="restaurantId">
+<input type="hidden" name="restaurantId" value="${param.restId}">
 Rating: <input type="text" name="rating">
 Title: <input type="text" name="title">
 Review: <input type="text" name="review">
-Review Id: <input type="text" name="reviewId">
+<!-- Review Id: <input type="text" name="reviewId"> -->
 
 <input type="submit" value="Call Servlet" />
 </form>

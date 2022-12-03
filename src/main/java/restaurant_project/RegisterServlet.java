@@ -57,9 +57,8 @@ public class RegisterServlet extends HttpServlet {
 		String p = request.getParameter("password");
 		String e = request.getParameter("email");
 		String c = request.getParameter("mobile_number");
-		RequestDispatcher dispatcher = null;
-	
-	
+
+
 		// Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -82,6 +81,7 @@ public class RegisterServlet extends HttpServlet {
 				out.println("location='Signup.jsp';");
 		    	out.println("</script>");
 		}else if(i > 0){
+
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('Sign into your account!');");
 				response.sendRedirect("Login.jsp");
@@ -96,5 +96,4 @@ public class RegisterServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-
 }
