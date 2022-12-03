@@ -8,10 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  * Servlet implementation class RegisterServlet
@@ -54,18 +57,9 @@ public class RegisterServlet extends HttpServlet {
 		String p = request.getParameter("password");
 		String e = request.getParameter("email");
 		String c = request.getParameter("mobile_number");
-		
 		RequestDispatcher dispatcher = null;
-		
-		if (n == "" ||p == "" ||e == "" ||c == "") {
-	    	out.println("<script type=\"text/javascript\">");
-			out.println("alert('please fill in all the empty blanks');");
-			out.println("location='Signup.jsp';");
-	    	out.println("</script>");
-//	    	dispatcher = request.getRequestDispatcher("Signup.jsp");
-//	    	dispatcher.forward(request, response);
-		}
-		
+	
+	
 		// Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -82,7 +76,12 @@ public class RegisterServlet extends HttpServlet {
 			// Step 6: perform the query on the database using the prepared statement
 			int i = ps.executeUpdate();
 			// Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
-			if(i > 0){
+			if (n == "" ||p == "" ||e == "" ||c == "") {
+				request.setAttribute("status", "failed");
+				out.println("<script type=\"text/javascript\">");
+				out.println("location='Signup.jsp';");
+		    	out.println("</script>");
+		}else if(i > 0){
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('Sign into your account!');");
 				response.sendRedirect("Login.jsp");

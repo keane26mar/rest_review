@@ -8,40 +8,45 @@
 <title>Signup</title>
 </head>
 <body>
+
+
 <div class="container" id="registration">
 				  <div class="title">Registration</div>
 				  <div class="content">
 					<form action="RegisterServlet" method="post">
 					  <div class="user-details">
 						<div class="input-box">
-						 Name: <input type="text" name="username" id="username" placeholder="Enter your username"  >
+						 Name: <input type="text" name="username" id="username" placeholder="Enter your username" required="required" >
 						</div>
 						<div class="input-box">
-			     		 Password: <input type="text" name="password" id="password" placeholder="Enter your password" >
+			     		 Password: <input type="text" name="password" id="password" placeholder="Enter your password" required="required" >
 						</div>
 						<div class="input-box">
-						 Email: <input type="text" name="email" id="email_address" placeholder="Enter your email">
+						 Email: <input type="text" name="email" id="email_address" placeholder="Enter your email" required="required">
 						</div>
 						<div class="input-box">
-						 Mobile number: <input type="text" name="mobile_number" id="mobile_number" placeholder="Enter your number">
+						 Mobile number: <input type="text" name="mobile_number" id="mobile_number" placeholder="Enter your number" required="required">
 						</div>
 					  </div>
 					  
 					  <div class="button">
-						<input type="submit" value="Sign up" href="Login.jsp">
+						<input type="submit" value="Sign up"    href="Login.jsp">
+						
 						
 					  </div>
-
-					  <a href="index.jsp" style="float: right;">HOME</a>
+		  <a href="index.jsp" style="float: right;">HOME</a>
+			
 					</form>
+		
+
 				  </div>
 				</div>			  
 			  </body>
 
 			
-
-            
+          
         </form>
+        
 
         <div id="message"></div>
 </body>
