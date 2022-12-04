@@ -16,8 +16,8 @@
 			<br> <label><b>Password </b> </label> <input type="Password" name="password" id="password" placeholder="Password"> <br>
 			<br> <input type="submit" name="login" id="Sign in" value="login" > <br>
 			<br> <input type="checkbox" id="check"> <span>Remember me</span> <br>
-			<br> <a href="#">Forgot Password</a> <br> <a href="Signup.jsp">Create account</a> <br> <a href="RestServlet">HOME</a>
-			<br> <a href="#">Forgot Password</a> <br> <a href="Signup.jsp">Create account</a> <br> <a href="index.jsp">HOME</a>
+			<br> <a href="#">Forgot Password</a> <br> <a href="Signup.jsp">Create account</a> <br> <a href="RestServlet/dashboard">HOME</a>
+			
 			<div id="message"></div>
 		</form>
 	</div>

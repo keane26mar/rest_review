@@ -1,4 +1,3 @@
-	
 
 
 import java.io.IOException;
@@ -32,8 +31,8 @@ public class RestServlet extends HttpServlet {
 	private String jdbcPassword = "password";
 	
 	private static final String SELECT_ALL_RESTS = "select * from rest_details ";
-	private static final String SELECT_REST_BY_ID = "select image, description, address, contact, website, title from rest_details where restId = ?";
-
+//	private static final String SELECT_REST_BY_ID = "select image, description, address, contact, website, title from rest_details where restId = ?";
+	private static final String SELECT_REST_BY_ID = "select * from rest_details where restId = ?";
 	
     protected Connection getConnection() {
 		Connection connection = null;

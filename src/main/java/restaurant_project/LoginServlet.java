@@ -72,7 +72,7 @@ public class LoginServlet extends HttpServlet {
 				
 			}else if(rs.next()) {
 				//if username and password true, go to index.jsp file 
-				response.sendRedirect("RestServlet");
+				response.sendRedirect("RestServlet/dashboard");
 			}else {
 				//if username and password false
 				out.println("<script type=\"text/javascript\">");
