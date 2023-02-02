@@ -41,7 +41,7 @@ li a:hover {
 </style>
 <body>
     <ul>
-        <li><a class="active" href="RestServlet/dashboard">Home</a></li>
+        <li><a class="active" href="http://localhost:8090/restaurant_project/Login.jsp">Home</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
 
@@ -49,8 +49,8 @@ li a:hover {
 
     <h3 class="text-center pt-3 pb-3">List of Restaurants</h3>
 
-
 <div class="row">
+
 <c:forEach var="rest" items="${listRests}">
   <div class="col-sm-4 pb-3">
     <div class="card">

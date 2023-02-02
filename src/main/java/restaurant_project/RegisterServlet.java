@@ -82,7 +82,7 @@ public class RegisterServlet extends HttpServlet {
 		    	out.println("</script>");
 		}else if(i > 0){
 
-				out.println("<script type=\"text/javascript\">");
+			out.println("<script type=\"text/javascript\">");
 				out.println("alert('Sign into your account!');");
 				response.sendRedirect("Login.jsp");
 				out.println("</script>");
