@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.html.HTMLDocument;
 
-import org.w3c.dom.NameList;
-
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
