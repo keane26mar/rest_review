@@ -1,14 +1,14 @@
 public class Rest {
-        protected int restId;
-        protected String image;
-        protected String description;
-        protected String address;
-        protected int contact;
-        protected String website;
-        protected String title;
-        protected String category;
-
-	public Rest(int restId, String image, String description, String address, int contact, String website, String title, String category) {
+	protected int restId;
+    protected String image;
+    protected String description;
+    protected String address;
+    protected int contact;
+    protected String website;
+    protected String title;
+    protected String category;
+    
+    public Rest(int restId, String image, String description, String address, int contact, String website, String title, String category) {
 		super();
 		this.restId = restId;
 		this.image = image;
@@ -19,7 +19,7 @@ public class Rest {
 		this.title = title;
 		this.category = category;
 	}
-	
+    
 	public void setRestId() {
 		this.restId = restId;
 	}
@@ -44,13 +44,6 @@ public class Rest {
 	public void setCategory() {
 		this.category = category;
 	}
-	
-	
-	
-	
-	
-	
-	
 	public int getRestId() {
 		return restId;
 	}	
@@ -80,11 +73,5 @@ public class Rest {
 	public String getCategory() {
 		return category;
 	}
-		
-	
-	
-	
 
-	
-	
 }
