@@ -11,7 +11,7 @@
 
 
 <div class="container" id="registration">
-				  <div class="title">Registration</div>
+				  <div class="title">Registrations</div>
 				  <div class="content">
 					<form action="RegisterServlet" method="post">
 					  <div class="user-details">
