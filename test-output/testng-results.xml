@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-02-02T14:58:18 SGT" name="Default suite" finished-at="2023-02-02T14:58:23 SGT" duration-ms="4661">
+    <groups>
+    </groups>
+    <test started-at="2023-02-02T14:58:18 SGT" name="Default test" finished-at="2023-02-02T14:58:23 SGT" duration-ms="4661">
+      <class name="restaurant_project.SeleniumTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:restaurant_project.SeleniumTest@2525ff7e]" started-at="2023-02-02T14:58:18 SGT" name="beforeTest" finished-at="2023-02-02T14:58:19 SGT" duration-ms="987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="testGetRestById()[pri:0, instance:restaurant_project.SeleniumTest@2525ff7e]" started-at="2023-02-02T14:58:19 SGT" name="testGetRestById" finished-at="2023-02-02T14:58:21 SGT" duration-ms="1617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetRestById -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:restaurant_project.SeleniumTest@2525ff7e]" started-at="2023-02-02T14:58:21 SGT" name="afterTest" finished-at="2023-02-02T14:58:23 SGT" duration-ms="2029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- restaurant_project.SeleniumTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

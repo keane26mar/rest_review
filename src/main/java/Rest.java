@@ -6,8 +6,9 @@ public class Rest {
         protected int contact;
         protected String website;
         protected String title;
+        protected String category;
 
-	public Rest(int restId, String image, String description, String address, int contact, String website, String title) {
+	public Rest(int restId, String image, String description, String address, int contact, String website, String title, String category) {
 		super();
 		this.restId = restId;
 		this.image = image;
@@ -16,7 +17,7 @@ public class Rest {
 		this.contact = contact;
 		this.website = website;
 		this.title = title;
-		
+		this.category = category;
 	}
 	
 	public void setRestId() {
@@ -39,6 +40,9 @@ public class Rest {
 	}
 	public void setTitle() {
 		this.title = title;
+	}
+	public void setCategory() {
+		this.category = category;
 	}
 	
 	
@@ -72,6 +76,9 @@ public class Rest {
 		
 	public String getTitle() {
 		return title;
+	}
+	public String getCategory() {
+		return category;
 	}
 		
 	

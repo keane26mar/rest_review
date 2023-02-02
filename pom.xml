@@ -7,7 +7,23 @@
   <name>testing</name>
   <description>testing</description>
   
+    <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <junit-jupiter.groupId>org.junit.jupiter</junit-jupiter.groupId>
+    <junit-jupiter.artifactId>junit.jupiter</junit-jupiter.artifactId>
+    <junit-jupiter.version>5.7.0</junit-jupiter.version>
+
+  </properties>
    <dependencies>
+   <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.7.0</version>
+    <scope>test</scope>
+</dependency>
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
@@ -32,7 +48,32 @@
         <artifactId>jstl</artifactId>
         <version>1.2</version>
     </dependency>
-
+    <dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>3.6.28</version>
+    <scope>test</scope>
+</dependency>
+        <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.0.0</version>
+    <scope>test</scope>
+</dependency>
+   
 </dependencies>
   
   <build>
@@ -44,6 +85,16 @@
           <release>17</release>
         </configuration>
       </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+          <configuration>
+          <suiteXmlFiles>
+          <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          </configuration>
+        </plugin>
+
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.3</version>

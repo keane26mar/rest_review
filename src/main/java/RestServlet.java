@@ -54,7 +54,7 @@ public class RestServlet extends HttpServlet {
     public RestServlet() {
         super();
         // TODO Auto-generated constructor stub
-    }
+    }	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -104,9 +104,10 @@ public class RestServlet extends HttpServlet {
 			int contact = rs.getInt("contact");
 			String website = rs.getString("website");
 			String title = rs.getString("title");
+			String category = rs.getString("category");
 			System.out.println(restId);
 
-			rests.add(new Rest(restId, image, description, address, contact, website, title));
+			rests.add(new Rest(restId, image, description, address, contact, website, title, category));
 			}
 			} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -119,7 +120,7 @@ public class RestServlet extends HttpServlet {
 	 private void getRestById(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		int restId = Integer.parseInt(request.getParameter("restId"));
-		Rest existingRest = new Rest(0, "", "", "", 0, "", "");
+		Rest existingRest = new Rest(0, "", "", "", 0, "", "", "");
 		try (Connection connection = getConnection();
 				// Step 5.1: Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_REST_BY_ID);) {
@@ -135,7 +136,8 @@ public class RestServlet extends HttpServlet {
 			int contact = rs.getInt("contact");
 			String website = rs.getString("website");
 			String title = rs.getString("title");
-			existingRest = new Rest(restId, image, description, address, contact, website, title);
+			String category = rs.getString("category");
+			existingRest = new Rest(restId, image, description, address, contact, website, title, category);
 	
 			}
 		} catch (SQLException e) {
