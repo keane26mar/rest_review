@@ -188,7 +188,7 @@ public class ReviewServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your projectname)
-		response.sendRedirect("http://localhost:8080/restaurant_project/ReviewServlet?restId=" + restaurantId);
+		response.sendRedirect("http://localhost:8090/restaurant_project/ReviewServlet?restId=" + restaurantId);
 	}
 
 	// method to delete user
