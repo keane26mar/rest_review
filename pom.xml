@@ -19,6 +19,7 @@
       <selenium.groupId>org.seleniumhq.selenium</selenium.groupId>
     <selenium.artifactId>selenium-java</selenium.artifactId>
     <selenium.version>2.53.1</selenium.version>
+
   </properties>
   
   <dependencies>
@@ -59,6 +60,18 @@
       <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.0.0</version>
+			<scope>test</scope>
+		</dependency>
 
 </dependencies>
 
@@ -71,6 +84,15 @@
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.3</version>
+      </plugin>
+      <plugin>
+      	<artifactId>maven-sunfire-plugin</artifactId>
+      	<version>2.22.1</version>
+      	<configuration>	
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
       </plugin>
     </plugins>
   </build>
