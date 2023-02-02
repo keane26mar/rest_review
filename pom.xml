@@ -17,15 +17,18 @@
       <junit-jupiter.version>5.7.0</junit-jupiter.version>
       
       <selenium.groupId>org.seleniumhq.selenium</selenium.groupId>
-		<selenium.artifactId>selenium-java</selenium.artifactId>
-		<selenium.version>3.141.59</selenium.version>
+    <selenium.artifactId>selenium-java</selenium.artifactId>
+    <selenium.version>2.53.1</selenium.version>
 
-		<testng.groupId>org.testing</testng.groupId>
-		<testng.artifactId>testing</testng.artifactId>
-		<testng.version>7.0.0</testng.version>
   </properties>
   
   <dependencies>
+  	<dependency>
+      <groupId>${selenium.groupId}</groupId>
+      <artifactId>${selenium.artifactId}</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+  
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
@@ -76,10 +79,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>17</release>
-        </configuration>
+        <version>3.8.0</version>
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
