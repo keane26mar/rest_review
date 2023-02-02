@@ -26,9 +26,9 @@ class RestTest {
 	void setUp() throws Exception {
 		rs = new rest_collection();
 		resttitle = new String ("Title2");
-		r1 = new Rest(1, "image1.jpg", "Description1", "Pasir Ris", 12345678, "www.example.com", "Candlenut");
-		r2 = new Rest(3, "image2.jpg", "Description2", "hello", 1, "hello", "Blue kozina");
-		r3 = new Rest(5, "image3.jpg", "Description3", "hello", 1, "hello", "Italain Osteria");
+		r1 = new Rest(1, "image1.jpg", "Description1", "Pasir Ris", 12345678, "www.example.com", "Candlenut","asian");
+		r2 = new Rest(3, "image2.jpg", "Description2", "hello", 1, "hello", "Blue kozina","western");
+		r3 = new Rest(5, "image3.jpg", "Description3", "hello", 1, "hello", "Italain Osteria","western");
 		rs.addRest(r1);
 		rs.addRest(r2);
 		rs.addRest(r3);
@@ -57,12 +57,14 @@ class RestTest {
         r1.setContact();
         r1.setWebsite();
         r1.setTitle();
+        r1.setCategory();
         assertEquals(1, r1.getRestId());
         assertEquals("image1.jpg", r1.getImage());
         assertEquals("Description1", r1.getDescription());
         assertEquals("Pasir Ris", r1.getAddress());
         assertEquals(12345678, r1.getContact());
         assertEquals("www.example.com", r1.getWebsite());
+        assertEquals("Candlenut", r1.getTitle());
         assertEquals("Candlenut", r1.getTitle());
     }
 	
