@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import restaurant_project.Rest;
+import restaurant_project.Review;
 
 /**
  * Servlet implementation class ReviewServlet

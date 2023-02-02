@@ -1,3 +1,4 @@
+package restaurant_project;
 public class Review {
         protected int userId;
         protected int restaurantId;
