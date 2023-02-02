@@ -1,17 +1,6 @@
 package restaurant_project;
 
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.*;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 
 public class rest_collection {
 	
@@ -54,21 +43,7 @@ public class rest_collection {
 		  }
 		  return null;
 	  }
-	  
-	  
-//	  public ArrayList<Rest> returnAllImage(String image) {
-//		  ArrayList<Rest> results =  new ArrayList<>();
-//		  for (Rest r :rests) {
-//			  if (r.getTitle().equals(title)) {
-//	                result2.add(r);
-//	            }
-//		  }
-//		  
-//		return rests;
-//		  
-//	  }
-	  
-	  
+	  	  
 	  public ArrayList<Rest> sortRestsByTitle() {         
 	        Collections.sort(rests, Rest.titleComparator);         
 	        return rests;     

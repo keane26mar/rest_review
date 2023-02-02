@@ -1,5 +1,7 @@
 package restaurant_project;
 
+import java.util.Comparator;
+
 public class Rest {
     protected int restId;
     protected String image;
@@ -75,5 +77,12 @@ public class Rest {
     public String getCategory() {
         return category;
     }
+    
+    public static Comparator<Rest> titleComparator = new Comparator<Rest>() {
+		@Override
+		public int compare(Rest s1, Rest s2) {
+			return (int) (s1.getTitle().compareTo(s2.getTitle()));
+		}
+	};
 
 }
