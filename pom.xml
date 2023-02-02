@@ -15,9 +15,19 @@
     <junit-jupiter.groupId>org.junit.jupiter</junit-jupiter.groupId>
      <junit-jupiter.artifactId>junit-jupiter</junit-jupiter.artifactId>
       <junit-jupiter.version>5.7.0</junit-jupiter.version>
+      
+      <selenium.groupId>org.seleniumhq.selenium</selenium.groupId>
+    <selenium.artifactId>selenium-java</selenium.artifactId>
+    <selenium.version>2.53.1</selenium.version>
   </properties>
   
   <dependencies>
+  	<dependency>
+      <groupId>${selenium.groupId}</groupId>
+      <artifactId>${selenium.artifactId}</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+  
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
@@ -56,7 +66,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.8.0</version>
         <configuration>
           <release>17</release>
         </configuration>
