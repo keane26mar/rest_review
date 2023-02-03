@@ -30,7 +30,7 @@
 					  </div>
 					  
 					  <div class="button">
-						<input type="submit" value="Sign up"    href="Login.jsp">
+						<input type="submit" value="Sign up"  href="Login.jsp" id="Signup">
 						
 						
 					  </div>
