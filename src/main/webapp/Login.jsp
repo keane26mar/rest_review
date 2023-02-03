@@ -12,7 +12,7 @@
 	<br>
 	<div class="login">
 		<form id="login" method="post" action="LoginServlet">
-			<label><b>Usernamee </b> </label> <input type="text" name="username" id="username" placeholder="Username" > <br>
+			<label><b>Username</b> </label> <input type="text" name="username" id="username" placeholder="Username" > <br>
 			<br> <label><b>Password </b> </label> <input type="Password" name="password" id="password" placeholder="Password"> <br>
 			<br> <input type="submit" name="login" id="Sign in" value="login" > <br>
 			<br> <input type="checkbox" id="check"> <span>Remember me</span> <br>
@@ -22,4 +22,6 @@
 		</form>
 	</div>
 </body>
+
+
 </html>

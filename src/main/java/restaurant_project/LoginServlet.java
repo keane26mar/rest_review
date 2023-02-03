@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 			}else {
 				//if username and password false
 				out.println("<script type=\"text/javascript\">");
-				   out.println("alert('username or password is incorrect');");
+//				   out.println("alert('username or password is incorrect');");
 				   out.println("location='Login.jsp';");
 				   out.println("</script>");
 			}
@@ -84,6 +84,6 @@ public class LoginServlet extends HttpServlet {
 			out.close();
 		}
 		doGet(request, response);
-	}
+		}
 
 }
