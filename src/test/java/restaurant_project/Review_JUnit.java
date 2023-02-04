@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class Review_JUnit {
@@ -77,5 +78,22 @@ class Review_JUnit {
 		
 		assertEquals(reviewID, testReviewC.reviewId);
 	}
+	
+	@Test
+	@DisplayName("testing for getters and setters")
+    public void testSettersGetters() {
+        review1.setUserId();
+        review1.setRestaurantId();
+        review1.setRating();
+        review1.setTitle();
+        review1.setReview();
+        review1.setReviewId();
+        assertEquals(1, review1.getUserId());
+        assertEquals(2, review1.getRestaurantId());
+        assertEquals(4, review1.getRating());
+        assertEquals("qwe", review1.getTitle());
+        assertEquals("qweqwe", review1.getReview());
+        assertEquals(1, review1.getReviewId());
+    }
 
 }
