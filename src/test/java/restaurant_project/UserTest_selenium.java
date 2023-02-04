@@ -57,7 +57,7 @@ class UserTest_selenium {
 	@Test
 	void testForWebsite() {
 		//Load website as a new page
-				webDriver.navigate().to("http://localhost:8090/rest_review/Login.jsp");
+				webDriver.navigate().to("http://localhost:8090/restaurant_project/Login.jsp");
 				
 				//Assert the title to check that we are indeed in the correct website
 				assertEquals(webDriver.getTitle(), "Restaurant review");
@@ -84,8 +84,8 @@ class UserTest_selenium {
 
 	@Test
 	void testForinvalidRegistration() {
-		webDriver.navigate().to("http://localhost:8090/rest_review/Signup.jsp");
-		String actualUrl="http://localhost:8090/rest_review/Signup.jsp";
+		webDriver.navigate().to("http://localhost:8090/restaurant_project/Signup.jsp");
+		String actualUrl="http://localhost:8090/restaurant_project/Signup.jsp";
 		String expectedUrl= webDriver.getCurrentUrl();
 		
 		webDriver.findElement(By.id("username")).sendKeys("james");
@@ -104,8 +104,8 @@ class UserTest_selenium {
 	
 	@Test
 	void testForLoginInvalid() {
-		webDriver.navigate().to("http://localhost:8090/rest_review/Login.jsp");
-		String actualUrl="http://localhost:8090/rest_review/Login.jsp";
+		webDriver.navigate().to("http://localhost:8090/restaurant_project/Login.jsp");
+		String actualUrl="http://localhost:8090/restaurant_project/Login.jsp";
 		String expectedUrl= webDriver.getCurrentUrl();
 		
 		
