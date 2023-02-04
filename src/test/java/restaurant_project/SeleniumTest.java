@@ -1,9 +1,7 @@
 package restaurant_project;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+
+
 
 import java.util.List;
 
@@ -12,12 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class SeleniumTest {
   //declare Selenium WebDriver
@@ -54,7 +52,7 @@ public class SeleniumTest {
   
   
   
-  @BeforeTest
+  @BeforeEach
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver
 	  //to amend directory path base on your local file path
@@ -66,7 +64,7 @@ public class SeleniumTest {
 	  webDriver = new ChromeDriver();  
   }
 
-  @AfterTest
+  @AfterEach
   public void afterTest() {
 	  //Quit the ChromeDriver and close all associated window at the end of test
 	  webDriver.close();			
