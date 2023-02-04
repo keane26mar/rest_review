@@ -58,7 +58,7 @@ public class SeleniumTest {
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver
 	  //to amend directory path base on your local file path
-	  String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver_win32\\chromedriver.exe";
+	  String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
 
 	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 
