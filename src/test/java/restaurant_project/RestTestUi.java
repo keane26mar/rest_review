@@ -39,6 +39,8 @@ class RestTestUi {
 		// Load website as a new page
 		webDriver.navigate().to("http://localhost:8090/rest_review/RestServlet/dashboard");
 
+		System.out.println("title: " + webDriver.getTitle());
+
 		// Assert the title to check that we are indeed in the correct website
 		assertEquals(webDriver.getTitle(), "Insert title here");
 
@@ -86,10 +88,6 @@ class RestTestUi {
 		WebElement link = webDriver.findElement(By.partialLinkText("More Info"));
 		String href = link.getAttribute("href");
 		String restId = href.substring(href.indexOf("=") + 1);
-		// Assert the title to check that we are indeed in the correct website
-		assertEquals(webDriver.getTitle(), "Insert title here");
-
-		System.out.println("title: " + webDriver.getTitle());
 
 		WebElement restIdLink = webDriver.findElement(By.xpath("//a[contains(@href, 'details?restId=')]"));
 		restIdLink.click();
