@@ -44,10 +44,11 @@ li a:hover {
         <li><a class="active" href="http://localhost:8090/restaurant_project/Login.jsp">Home</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
+         <li><a href="#testing">Testing2</a></li>
 
     </ul>
 
-    <h3 class="text-center pt-3 pb-3">List of Restaurants</h3>
+    <h3 class="text-center pt-3 pb-3">List of Restaurant</h3>
 
 <div class="row">
 
