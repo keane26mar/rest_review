@@ -61,7 +61,7 @@ public class RestServlet extends HttpServlet {
 
 		// TODO Auto-generated method stub
 		
-		String action = request.getServletPath();
+		String action = request.getPathInfo();
 		try {
 			switch (action) {
 			case "/RestServlet/details":
