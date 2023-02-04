@@ -48,7 +48,7 @@ li a:hover {
 
     </ul>
 
-    <h3 class="text-center pt-3 pb-3">List of Restaurants</h3>
+    <h3 class="text-center pt-3 pb-3">List of Restaurant</h3>
 
 <div class="row">
 
