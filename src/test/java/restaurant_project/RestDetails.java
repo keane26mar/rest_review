@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
+
 public class RestDetails {
 	public ArrayList<Rest> rests = new ArrayList<>();
 	public int capacity;
