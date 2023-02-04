@@ -37,15 +37,6 @@ public class RestDetails {
 	    }
 	    return result;
 	}
-	public List<Rest> findRestByTitle(String title) {
-		List<Rest> result = new ArrayList<>();
-		for (Rest r : rests) {
-		if (r.getTitle().equals(title)) {
-		result.add(r);
-		}
-		}
-		return result;
-		}
 
 	
 
