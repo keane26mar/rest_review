@@ -41,7 +41,7 @@ li a:hover {
 </style>
 <body>
     <ul>
-        <li><a class="active" href="http://localhost:8090/restaurant_project/Login.jsp">Home</a></li>
+        <li><a class="active" href="http://localhost:8090/rest_review/Login.jsp">Home</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
          <li><a href="#testing">Testing2</a></li>
