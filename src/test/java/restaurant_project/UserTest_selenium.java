@@ -82,24 +82,24 @@ class UserTest_selenium {
 //	}
 	
 
-//	@Test
-//	void testForRegistration() {
-//		webDriver.navigate().to("http://localhost:8090/rest_review/Signup.jsp");
-//		String actualUrl="http://localhost:8090/rest_review/Login.jsp";
-//		String expectedUrl= webDriver.getCurrentUrl();
-//		
-//		webDriver.findElement(By.id("username")).sendKeys("james");
-//		webDriver.findElement(By.id("password")).sendKeys("james");		
-//		webDriver.findElement(By.id("email_address")).sendKeys("james");		
-//		webDriver.findElement(By.id("mobile_number")).sendKeys("james");
-//		
-//		webDriver.findElement(By.id("Signup")).click();
-//		
-//		assertEquals(actualUrl, expectedUrl);
-//		
-//		System.out.println("title: "+ webDriver.getTitle());
-//		
-//	}
+	@Test
+	void testForinvalidRegistration() {
+		webDriver.navigate().to("http://localhost:8090/rest_review/Signup.jsp");
+		String actualUrl="http://localhost:8090/rest_review/Signup.jsp";
+		String expectedUrl= webDriver.getCurrentUrl();
+		
+		webDriver.findElement(By.id("username")).sendKeys("james");
+		webDriver.findElement(By.id("password")).sendKeys("12345");		
+		webDriver.findElement(By.id("email_address")).sendKeys("james@gmail.com");		
+		webDriver.findElement(By.id("mobile_number")).sendKeys("9009889");
+		
+		webDriver.findElement(By.id("Signup")).click();
+		
+		assertEquals(actualUrl, expectedUrl);
+		
+		System.out.println("title: "+ webDriver.getTitle());
+		
+	}
 //	
 	
 	@Test
@@ -115,8 +115,6 @@ class UserTest_selenium {
 	
 		assertEquals(actualUrl, expectedUrl);
 
-
-		System.out.println("title: "+ webDriver.getTitle());
 	}
 
 	
