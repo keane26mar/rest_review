@@ -46,12 +46,6 @@ public class RestDetails {
 		}
 		return result;
 		}
-	
-	public List<Rest> sortTitleByDesc() {
-	    rests.sort(Comparator.comparing(Rest::getTitle).reversed());
-	    return rests;
-	}
-
 
 	
 

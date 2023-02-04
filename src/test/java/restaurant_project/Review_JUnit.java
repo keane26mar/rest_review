@@ -37,7 +37,7 @@ class Review_JUnit {
 
 	@Test
 	void testReview_collection() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 	@Test

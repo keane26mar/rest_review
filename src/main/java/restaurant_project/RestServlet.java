@@ -1,3 +1,4 @@
+package restaurant_project;
 
 
 import java.io.IOException;
@@ -15,9 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import java.awt.event.ActionEvent;
-
-
-import restaurant_project.Rest;
 
 
 /**
