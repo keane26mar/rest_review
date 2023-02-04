@@ -36,7 +36,7 @@ class ReviewTestSelenium {
 	@Test
 	void testTofindReviewElements() {
 		//Load website as a new page
-		webDriver.navigate().to("http://localhost:8090/restaurant_project/ReviewServlet?restId=2");
+		webDriver.navigate().to("http://localhost:8090/rest_review/ReviewServlet?restId=2");
 		
 		//Assert the title to check that we are indeed in the correct website
 		assertEquals(webDriver.getTitle(), "Insert title here");
