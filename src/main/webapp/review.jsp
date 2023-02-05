@@ -46,7 +46,7 @@ li a:hover {
 
     </ul>
     
-    <h3 class="text-center">Review List</h3>
+    <h3 class="text-center">List of Reviews</h3>
 				<!-- Add new user button redirects to the register.jsp page -->
 				<a href="<%=request.getContextPath()%>/reviewAdd.jsp?restId=<c:out value='${param.restId}' />"
 					class="btn btn-success">Add New Review</a>
